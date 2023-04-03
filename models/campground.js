@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Review = require('./review')
 const Schema = mongoose.Schema;
 
@@ -11,10 +11,9 @@ const CampgroundSchema = new Schema({
     reviews: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Review"
+            ref: 'Review'
         }
     ]
-
 });
 
 CampgroundSchema.post('findOneAndDelete', async function (doc) {
@@ -27,4 +26,4 @@ CampgroundSchema.post('findOneAndDelete', async function (doc) {
     }
 })
 
-module.exports = mongoose.model("Campground", CampgroundSchema);
+module.exports = mongoose.model('Campground', CampgroundSchema);
